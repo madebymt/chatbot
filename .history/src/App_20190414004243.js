@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {sendMessage} from './chat';
+import {start} from 'repl';
+//import logo from './logo.svg'; import './App.css';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({feed: state})
+const mapStateToProps = state => {
+  feed : state;
 
-export default connect(mapStateToProps, {sendMessage})(App);
+  export default connect(mapStateToProps, {sendMessage})(App);
