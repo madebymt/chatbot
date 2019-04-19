@@ -1,19 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {sendMessage} from './chat';
-import 'milligram';
 
 class App extends Component {
   render() {
-    const {feed, sendMessage} = this.props;
+    const {feed} = this.props;
     return (
       <div className="App">
-        <h1>HEY! Redux Chatbot</h1>
-        < ul >
-          {feed.map(entry => <li key={entry.id}>
-            {entry.text}
-          </li>)
-}
+        <h1>{e.target.value}}!</h1>
+        <ul>
+          {feed.map(entry => <li>{entry.text}</li>)}
         </ul>
         <input
           type="text"
@@ -21,8 +17,5 @@ class App extends Component {
           ? sendMessage(e.target.value)
           : null}/>
       </div>
-    )
-  }
-}
-const mapStateToProps = state => ({feed: state})
-export default connect(mapStateToProps, {sendMessage})(App)
+      ) } } const mapStateToProps = state => ({feed : state}) 
+      export default connect(mapStateToProps, {sendMessage}(App)

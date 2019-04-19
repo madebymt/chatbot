@@ -8,7 +8,7 @@ class App extends Component {
     const {feed, sendMessage} = this.props;
     return (
       <div className="App">
-        <h1>HEY! Redux Chatbot</h1>
+        <h1>HEY!</h1>
         < ul >
           {feed.map(entry => <li key={entry.id}>
             {entry.text}

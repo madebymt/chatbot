@@ -22,9 +22,11 @@ const messageMiddleware = () => next => action => {
             .textRequest(text)
             .then(onSucess)
         function onSucess(response) {
-            const {result: {}} = response;
+            const {result: {
+                    speech
+                }} = response;
 
-            //next(sendMessage(speech, 'bot'));
+            next(sendMessage(speech, 'bot'));
 
         }
     }

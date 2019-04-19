@@ -24,7 +24,7 @@ const messageMiddleware = () => next => action => {
         function onSucess(response) {
             const {result: {}} = response;
 
-            //next(sendMessage(speech, 'bot'));
+            next(sendMessage(speech, 'bot'));
 
         }
     }

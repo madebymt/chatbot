@@ -22,9 +22,11 @@ const messageMiddleware = () => next => action => {
             .textRequest(text)
             .then(onSucess)
         function onSucess(response) {
-            const {result: {}} = response;
+            const {result: {
+                    fulfilment
+                }} = response;
 
-            //next(sendMessage(speech, 'bot'));
+            next(sendMessage(fulfilment.speech, 'bot'));
 
         }
     }
@@ -36,7 +38,7 @@ const initState = [
     }
 ]
 
-const messageReducer = (state = initState, action) => {
+const messageReducer = (state = [], action) => {
     switch (action.type) {
         case ON_MESSAGE:
             return [
