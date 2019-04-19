@@ -13,7 +13,7 @@ export const sendMessage = (text, sender = "user") => ({
         sender
     }
 });
-//handle request and response
+
 const messageMiddleware = () => next => action => {
     next(action);
     if (action.type === ON_MESSAGE) {
@@ -22,16 +22,21 @@ const messageMiddleware = () => next => action => {
             .textRequest(text)
             .then(onSucess)
         function onSucess(response) {
-            const {result: {
-                    fulfillment
-                }} = response;
+            const {
+                result: {
+
+                    fulfillment: {
+                        speech
+                    }
+
+                }
+            } = response;
             next(sendMessage(fulfillment.speech, 'bot'));
 
         }
     }
 }
 
-// init stat
 const initState = [
     {
         text: 'hey'

@@ -13,7 +13,7 @@ export const sendMessage = (text, sender = "user") => ({
         sender
     }
 });
-//handle request and response
+
 const messageMiddleware = () => next => action => {
     next(action);
     if (action.type === ON_MESSAGE) {
@@ -31,7 +31,6 @@ const messageMiddleware = () => next => action => {
     }
 }
 
-// init stat
 const initState = [
     {
         text: 'hey'
